@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# when you want to remove the .html on the url, remove the ".html" part of the file name: "test.html" would become just "test"
+# also remove ".html" on the <a href="test.html">test</a> too. so it would become <a href="test">test</a>, the url would now show it as having no .html 
+# REMEMBER
